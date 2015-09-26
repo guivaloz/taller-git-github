@@ -1,0 +1,85 @@
+%
+% Taller de Git y GitHub
+%
+% Comando Git parte 2
+%
+
+\section{Git Intermedio}
+
+\subsection{Ramas}
+\begin{frame}
+  \frametitle{Ramas}
+  Un \textit{branch} es una \textbf{rama} que permite establecer una ruta distinta; que más adelante podría integrarse a la \textbf{rama principal}.
+  \begin{block}<1->{Mostrar la rama en uso}
+    \$ git branch\par
+  \end{block}
+  \begin{block}<2->{Agregar una nueva rama y cambiarse a ésta}
+    \$ git branch guillermo\par
+    \$ git checkout guillermo
+  \end{block}
+  \begin{block}<3->{Revise las ramas y sus últimos comentarios}
+    \$ git branch -v
+  \end{block}
+\end{frame}
+
+\subsection{Cómo funcionan las ramas}
+\begin{frame}
+  \frametitle{Cómo funcionan las ramas}
+  Si elimina o renombra archivos o directorios deberá usar el parámetro \textbf{--all} al agregar.
+  \begin{block}<1->{Agregue novedades y haga un corte}
+    \$ git status\par
+    \$ git add . --all\par
+    \$ git status\par
+    \$ git commit -m "He hecho un par de mejoras."\par
+  \end{block}
+  \begin{block}<2->{Cámbiese a la rama master, queda como antes de sus cambios}
+    \$ git checkout master
+  \end{block}
+  \begin{block}<3->{Regrese a su rama, regresarán los cambios}
+    \$ git checkout guillermo
+  \end{block}
+\end{frame}
+
+\subsection{Fusionar una rama}
+\begin{frame}
+  \frametitle{Fusionar una rama}
+  Lo más sano es ir integrando novedades a las ramas. Cuando queden listas, se integran a la rama \textbf{master}.
+  Lo que es lo mismo, mantenga \textbf{master} \textit{atrás} como lo estable y a las ramas \textit{adelante} con las novedades.
+  \begin{block}<1->{Fusionar la rama guillermo en master}
+    \$ git checkout master\par
+    \$ git merge guillermo
+  \end{block}
+  \begin{block}<2->{Verifique que master y la rama guillermo son iguales}
+    \$ git branch -v
+  \end{block}
+  \begin{block}<3->{Cuando ya no la necesite; puede eliminar una rama}
+    \$ git branch -d guillermo
+  \end{block}
+\end{frame}
+
+\subsection{Subir una rama a GitHub}
+\begin{frame}
+  \frametitle{Subir una rama a GitHub}
+  Cuando tenga avances terminados o \textit{commiteados} que compartir con sus colegas en GitHub.
+  \begin{block}<1->{Subir una rama a GitHub}
+    \$ git push origin nombredelarama
+  \end{block}
+  \begin{block}<2->{Sus amigos pueden bajar su rama}
+    \$ git fetch origin nombredelarama\par
+    \$ git checkout nombredelarama\par
+    \$ git pull origin nombredelarama
+  \end{block}
+\end{frame}
+
+\subsection{Más órdenes útiles}
+\begin{frame}
+  \frametitle{Más órdenes útiles}
+  No hay mejor forma de aprender que usándolo.
+  \begin{block}<1->{Sincronice su copia local y lea los cambios de las ramas}
+    \$ git fetch\par
+    \$ git branch -v
+  \end{block}
+  \begin{block}<2->{Para regresar al pasado, destruyendo lo nuevo}
+    \$ git reset --hard 1234567
+  \end{block}
+\end{frame}

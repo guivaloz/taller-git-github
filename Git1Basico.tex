@@ -1,0 +1,72 @@
+%
+% Taller de Git y GitHub
+%
+% Comando Git parte 1
+%
+
+\section{Git básico}
+
+\subsection{Primeros pasos}
+\begin{frame}
+  \frametitle{Versión instalada}
+  Verifique que tenga instalado Git.
+  \begin{block}<1->{Para averiguar la versión instalada}
+    \$ git version\par
+    git version 2.4.6
+  \end{block}
+  \begin{block}<2->{Para instalar en la famila de Debian}
+    \$ sudo apt-get install git-cvs
+  \end{block}
+  \begin{block}<3->{Ejecute Git sin parámetros para mostrar una ayuda simple}
+    \$ git
+  \end{block}
+\end{frame}
+
+\subsection{Configurar}
+\begin{frame}
+  \frametitle{Configuraciones globales}
+  Es obligado que configure su nombre e e-mail.
+  \begin{block}<1->{Definir su nombre y correo electrónico}
+    \$ git config --global user.name "Tu Nombre Completo"\par
+    \$ git config --global user.email tunombre@servidor.com
+  \end{block}
+  \begin{block}<2->{Usar colores en la terminal}
+    \$ git config --global color.ui auto
+  \end{block}
+  \begin{block}<3->{Generar un par de llaves OpenSSH}
+    \$ ssh-keygen
+  \end{block}
+\end{frame}
+
+\subsection{Iniciar repositorio}
+\begin{frame}
+  \frametitle{Iniciar un repositorio}
+  Para iniciar un repositorio cámbiese al directorio base del mismo y ejecute git init.
+  \begin{block}<1->{Crear su Primer Repositorio}
+    \$ cd \textasciitilde/Documentos/GitHub/PrimerRepositorio\par
+    \$ git init
+  \end{block}
+  Todos los comandos Git de este repositorio debe ejecutarlos en este directorio. Se creará un directorio oculto con nombre .git.
+  \begin{block}<2->{Configure lo que NO se compartirá}
+    \$ nano .git/info/exclude
+  \end{block}
+\end{frame}
+
+\subsection{Agregar novedades}
+\begin{frame}
+  \frametitle{Agregar novedades al repositorio}
+  Haga cambios en los archivos o cree nuevos.
+  \begin{block}<1->{Revisar el status}
+    \$ cd \textasciitilde/Documentos/Prueba\par
+    \$ git status
+  \end{block}
+  \begin{block}<2->{Agregar archivos al repositorio local}
+    \$ git add .
+  \end{block}
+  \begin{block}<3->{Hacer un corte: es su respaldo y lo deja listo para subir}
+    \$ git commit -m "He hecho unas mejoras para aprender."
+  \end{block}
+  \begin{block}<4->{Revisar la bitácora}
+    \$ git log
+  \end{block}
+\end{frame}
